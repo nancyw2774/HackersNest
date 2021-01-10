@@ -8,7 +8,6 @@ using namespace Game;
 
 GameBoard::GameBoard()
 {
-	CreatePlayer();
 	CreateBackground(GameEngine::eTexture::Menu_bg);
 	Wfh();
 }
@@ -71,19 +70,19 @@ void GameBoard::SortGarbage()
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(sortGarbage);
 }
 
-void GameBoard::CreateImage(GameEngine::eTexture::type texture, float x, float y)
+void GameBoard::CreateImage(GameEngine::eTexture::type texture, float x, float y, float size_x, float size_y)
 {
 	image = new GameEngine::Entity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(image);
 
 	image->SetPos(sf::Vector2f(x, y));
-	image->SetSize(sf::Vector2f(50.0f, 50.0f));
+	image->SetSize(sf::Vector2f(size_x, size_y));
 
 	//Render
 	GameEngine::SpriteRenderComponent *render = image->AddComponent<GameEngine::SpriteRenderComponent>(); //<-- Use the SpriteRenderComponent
 
 	render->SetFillColor(sf::Color::Transparent);
-	render->SetTexture(GameEngine::eTexture::Garbage); // <-- Assign the texture to this entity
+	render->SetTexture(texture); // <-- Assign the texture to this entity
 
 	//Click status
 	//image->AddComponent<Game::ImageClickComponent>();
@@ -94,6 +93,8 @@ void GameBoard::Wfh()
 	wfh = new GameEngine::Entity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(wfh);
 	CreateBackground(GameEngine::eTexture::WFH_bg);
+	CreateImage(GameEngine::eTexture::Monitor, 940, 540, 1920, 1080);
+	CreateImage(GameEngine::eTexture::Window, 50, 50, 700, 700);
 }
 
 void GameBoard::BakingBread()

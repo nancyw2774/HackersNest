@@ -28,6 +28,8 @@ namespace GameEngine
 			ChipBag,
 			Fish,
 			GarbageBall,
+			Monitor,
+			Window,
 
 
 			Count,
@@ -42,7 +44,7 @@ namespace GameEngine
 		case eTexture::type::Menu_bg: return "Menu.png";
 		case eTexture::type::CleanBox_bg: return "Menu.jpg";
 		case eTexture::type::SortGarbage_bg: return "Menu.jpg";
-		case eTexture::type::WFH_bg: return "Monitor_WFH.png";
+		case eTexture::type::WFH_bg: return "WFH Instructions.png";
 		case eTexture::type::BakeBread_bg: return "Menu.jpg";
 		case eTexture::type::WashYoHands_bg: return "Menu.jpg";
 		case eTexture::type::PutOnMask_bg: return "Menu.jpg";
@@ -56,6 +58,9 @@ namespace GameEngine
 		case eTexture::type::ChipBag: return "Chip_Bag.png";
 		case eTexture::type::Fish: return "Fish.png";
 		case eTexture::type::GarbageBall: return "Garbage_Ball.png";
+
+		case eTexture::type::Monitor: return "Monitor_WFH.png";
+		case eTexture::type::Window: return "Blank Window.png";
 		}
 		return "UnknownTexType";
 	}

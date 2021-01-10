@@ -32,11 +32,12 @@ namespace Game
 		void SortGarbage();
 		GameEngine::Entity* sortGarbage;
 
-		void CreateImage(GameEngine::eTexture::type texture, float x, float y);
+		void CreateImage(GameEngine::eTexture::type texture, float x, float y,float size_x, float size_y);
 		GameEngine::Entity* image;
 
 		void Wfh();
 		GameEngine::Entity* wfh;
+		
 
 		void BakingBread();
 		GameEngine::Entity* bakingBread;

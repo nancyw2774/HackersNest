@@ -47,6 +47,12 @@ namespace TextureHelper
 {
 	sf::Vector2f GetTextureTileSize(GameEngine::eTexture::type texture)
 	{
+		switch (texture) 
+		{
+		case GameEngine::eTexture::Hands: return sf::Vector2f( 360.0f, 180.0f );
+		}
+
 		return sf::Vector2f(-1.f, -1.f);
 	}
 }
+

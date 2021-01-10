@@ -141,7 +141,8 @@ void GameBoard::CreateHandPlayer()
     GameEngine::SpriteRenderComponent* render = handplayer->AddComponent<GameEngine::SpriteRenderComponent>(); //<-- Use the SpriteRenderComponent
 
     render->SetTexture(GameEngine::eTexture::type::Hands);  // <-- Assign the texture to this entity
-    render->SetFillColor(sf::Color::White);
+    render->SetTileIndex(sf::Vector2i(1,0));
+	render->SetFillColor(sf::Color::White);
 
     //Movement 
     handplayer->AddComponent<Game::HandPlayerMovementComponent>();
@@ -222,10 +223,10 @@ void GameBoard::UpdateWashHands()
 	{
 		GameEngine::SpriteRenderComponent* render = handplayer->GetComponent<GameEngine::SpriteRenderComponent>();
 		if (waterCount == caughtWaterCount) {
-			render->SetTexture(GameEngine::eTexture::type::ShinyHands);  // <-- Assign the texture to this entity
+			render->SetTileIndex(sf::Vector2i(0,0));  // <-- Assign the texture to this entity
 		}
 		else {
-			render->SetTexture(GameEngine::eTexture::type::SoapyHands);  // <-- Assign the texture to this entity
+			render->SetTileIndex(sf::Vector2i(2,0));  // <-- Assign the texture to this entity
 		}
 	}
 }

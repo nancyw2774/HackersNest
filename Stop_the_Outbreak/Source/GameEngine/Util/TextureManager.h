@@ -11,13 +11,10 @@ namespace GameEngine
 		enum type
 		{
 			None = -1,
-			Player,
 
 			Menu_bg,
-			CleanBox_bg,
 			SortGarbage_bg,
 			WFH_bg,
-			BakeBread_bg,
 			WashYoHands_bg,
 			PutOnMask_bg,
 			Blank_bg,
@@ -49,14 +46,11 @@ namespace GameEngine
 	{
 		switch (texture)
 		{
-		case eTexture::Player: return "Menu.png";
 		case eTexture::type::Menu_bg: return "Menu.png";
-		case eTexture::type::CleanBox_bg: return "placeholder_bg.jpg";
 		case eTexture::type::SortGarbage_bg: return "Recycling Instructions.png";
 		case eTexture::type::WFH_bg: return "Monitor_WFH.png";
-		case eTexture::type::BakeBread_bg: return "placeholder_bg.jpg";
-		case eTexture::type::WashYoHands_bg: return "placeholder_bg.jpg";
-		case eTexture::type::PutOnMask_bg: return "placeholder_bg.jpg";
+		case eTexture::type::WashYoHands_bg: return "Wash Hands Instructions 2.png";
+		case eTexture::type::PutOnMask_bg: return "Mask Instructions.png";
 		case eTexture::type::Blank_bg: return "Sourdough Instructions.png";
 		case eTexture::type::Mask_1: return "1_Mask.png";
 		case eTexture::type::Mask_2: return "2_Masks.png";

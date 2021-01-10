@@ -2,7 +2,7 @@
 
 using namespace GameEngine;
 
-TextureManager* TextureManager::sm_instance = nullptr;
+TextureManager *TextureManager::sm_instance = nullptr;
 
 TextureManager::TextureManager()
 {
@@ -12,18 +12,16 @@ TextureManager::TextureManager()
 	}
 }
 
-
 TextureManager::~TextureManager()
 {
 	UnLoadTextures();
 }
 
-
 void TextureManager::LoadTextures()
 {
 	for (int a = 0; a < (int)eTexture::Count; ++a)
 	{
-		sf::Texture* texture = new sf::Texture();
+		sf::Texture *texture = new sf::Texture();
 		std::string filePath;
 		filePath.append("Resources/img/");
 		filePath.append(GetPath((eTexture::type)a));
@@ -32,7 +30,6 @@ void TextureManager::LoadTextures()
 		m_textures[a] = texture;
 	}
 }
-
 
 void TextureManager::UnLoadTextures()
 {
@@ -47,6 +44,11 @@ namespace TextureHelper
 {
 	sf::Vector2f GetTextureTileSize(GameEngine::eTexture::type texture)
 	{
+		switch (texture)
+		{
+		case GameEngine::eTexture::Player:
+			return sf::Vector2f(50.f, 50.f);
+		}
 		return sf::Vector2f(-1.f, -1.f);
 	}
-}
+} // namespace TextureHelper

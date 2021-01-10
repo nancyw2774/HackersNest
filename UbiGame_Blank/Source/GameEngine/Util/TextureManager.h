@@ -32,47 +32,73 @@ namespace GameEngine
 			Instructions_wfh,
 			Window,
 			Numbers,
-
 			Face,
 			Mask,
 			Hands,
 			Water,
+			Close,
 
 			Count,
 		};
 	}
 
-	inline const char* GetPath(eTexture::type texture)
+	inline const char *GetPath(eTexture::type texture)
 	{
 		switch (texture)
 		{
-		case eTexture::Player: return "Menu.png";
-		case eTexture::type::Menu_bg: return "Menu.png";
-		case eTexture::type::CleanBox_bg: return "placeholder_bg.jpg";
-		case eTexture::type::SortGarbage_bg: return "Recycling Instructions.png";
-		case eTexture::type::WFH_bg: return "Monitor_WFH.png";
-		case eTexture::type::BakeBread_bg: return "Menu.jpg";
-		case eTexture::type::WashYoHands_bg: return "Wash Hands Instructions.png";
-		case eTexture::type::PutOnMask_bg: return "Mask Instructions.png";
+		case eTexture::Player:
+			return "Menu.png";
+		case eTexture::type::Menu_bg:
+			return "Menu.png";
+		case eTexture::type::CleanBox_bg:
+			return "placeholder_bg.jpg";
+		case eTexture::type::SortGarbage_bg:
+			return "Recycling Instructions.png";
+		case eTexture::type::WFH_bg:
+			return "Monitor_WFH.png";
+		case eTexture::type::BakeBread_bg:
+			return "Menu.png";
+		case eTexture::type::WashYoHands_bg:
+			return "Wash Hands Instructions.png";
+		case eTexture::type::PutOnMask_bg:
+			return "Mask Instructions.png";
 
-		case eTexture::type::Garbage: return "Garbage_Bin.png";
-		case eTexture::type::Compost: return "Compost_Pit.png";
-		case eTexture::type::Recycling: return "Recycling_Sign.png";
-		case eTexture::type::BananaPeel: return "Banana_Peel.png";
-		case eTexture::type::AluminumCan: return "Aluminum_Can.png";
-		case eTexture::type::Bottle: return "Bottle.png";
-		case eTexture::type::ChipBag: return "Chip_Bag.png";
-		case eTexture::type::Fish: return "Fish.png";
-		case eTexture::type::GarbageBall: return "Garbage_Ball.png";
+		case eTexture::type::Garbage:
+			return "Garbage_Bin.png";
+		case eTexture::type::Compost:
+			return "Compost_Pit.png";
+		case eTexture::type::Recycling:
+			return "Recycling_Sign.png";
+		case eTexture::type::BananaPeel:
+			return "Banana_Peel.png";
+		case eTexture::type::AluminumCan:
+			return "Aluminum_Can.png";
+		case eTexture::type::Bottle:
+			return "Bottle.png";
+		case eTexture::type::ChipBag:
+			return "Chip_Bag.png";
+		case eTexture::type::Fish:
+			return "Fish.png";
+		case eTexture::type::GarbageBall:
+			return "Garbage_Ball.png";
 
-		case eTexture::type::Instructions_wfh: return "WFH Instructions.png";
-		case eTexture::type::Window: return "Blank Window.png";
-		case eTexture::type::Numbers: return "Numbers.png";
-		case eTexture::type::Face: return "Face.png";
-		case eTexture::type::Mask: return "mask.png";
-		case eTexture::type::Hands: return "Hands.png";
-		case eTexture::type::Water: return "Possible Raindrops.png";
+		case eTexture::type::Instructions_wfh:
+			return "WFH Instructions.png";
+		case eTexture::type::Window:
+			return "Blank Window.png";
+		case eTexture::type::Numbers:
+			return "Numbers.png";
+		case eTexture::type::Close:
+			return "x.png";
 
+		case eTexture::type::Face:
+			return "Face.png";
+		case eTexture::type::Mask:
+			return "mask.png";
+		case eTexture::type::Hands:
+			return "Hands.png";
+		case eTexture::type::Water:
+			return "Possible Raindrops.png";
 		}
 		return "UnknownTexType";
 	}
@@ -80,24 +106,28 @@ namespace GameEngine
 	class TextureManager
 	{
 	public:
-		static TextureManager* GetInstance() { if (!sm_instance) sm_instance = new TextureManager(); return sm_instance; }
+		static TextureManager *GetInstance()
+		{
+			if (!sm_instance)
+				sm_instance = new TextureManager();
+			return sm_instance;
+		}
 		~TextureManager();
 
 		void LoadTextures();
 		void UnLoadTextures();
 
-		sf::Texture* GetTexture(eTexture::type texture) const { return m_textures[(int)texture]; }
+		sf::Texture *GetTexture(eTexture::type texture) const { return m_textures[(int)texture]; }
 
 	private:
 		TextureManager();
-		static TextureManager* sm_instance;
+		static TextureManager *sm_instance;
 
-		sf::Texture* m_textures[eTexture::Count];
+		sf::Texture *m_textures[eTexture::Count];
 	};
-}
+} // namespace GameEngine
 
 namespace TextureHelper
 {
 	sf::Vector2f GetTextureTileSize(GameEngine::eTexture::type texture);
 }
-

@@ -122,12 +122,13 @@ void GameBoard::Wfh()
 		int randX = (rand() % 1500) + 200;
 		int randY = (rand() % 930) + 150;
 		CreateImage(GameEngine::eTexture::Window, randX, randY, 400.0f, 300.0f);
-		CreateImage(GameEngine::eTexture::Close, randX - 30, randY - 50, 30, 50);
+		CreateImage(GameEngine::eTexture::Close, randX + 165, randY - 113, 30, 30);
 	}
-
-	CreateImage(GameEngine::eTexture::Window, randX, randY, 400.0f, 300.0f);
-	CreateImage(GameEngine::eTexture::Close, randX, randY, 30, 30);
-
+	//left to do
+	//clicky thing so that on 'x' it will close
+	//count score
+	//countdown timer
+	//gl :)
 	//option: show one window at a time and appear as others close
 	//count up the number of windows closed before the time
 	//set timer that shows overtime or success

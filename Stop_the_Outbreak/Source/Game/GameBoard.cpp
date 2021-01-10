@@ -219,14 +219,13 @@ void GameBoard::UpdateWashHands()
 		}
 		UpdateWaters();
 	}
-	else 
-	{
-		GameEngine::SpriteRenderComponent* render = handplayer->GetComponent<GameEngine::SpriteRenderComponent>();
+	else {
+		GameEngine::SpriteRenderComponent* render = handplayer->AddComponent<GameEngine::SpriteRenderComponent>();
 		if (waterCount == caughtWaterCount) {
-			render->SetTileIndex(sf::Vector2i(0,0));  // <-- Assign the texture to this entity
+			render->SetTileIndex(sf::Vector2i(0,0));
 		}
 		else {
-			render->SetTileIndex(sf::Vector2i(2,0));  // <-- Assign the texture to this entity
+			render->SetTileIndex(sf::Vector2i(2,0));  
 		}
 	}
 }

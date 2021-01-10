@@ -33,6 +33,10 @@ namespace GameEngine
 			Window,
 			Numbers,
 
+			Face,
+			Mask,
+			Hands,
+			Water,
 
 			Count,
 		};
@@ -47,9 +51,9 @@ namespace GameEngine
 		case eTexture::type::CleanBox_bg: return "placeholder_bg.jpg";
 		case eTexture::type::SortGarbage_bg: return "Recycling Instructions.png";
 		case eTexture::type::WFH_bg: return "Monitor_WFH.png";
-		case eTexture::type::BakeBread_bg: return "placeholder_bg.jpg";
-		case eTexture::type::WashYoHands_bg: return "placeholder_bg.jpg";
-		case eTexture::type::PutOnMask_bg: return "placeholder_bg.jpg";
+		case eTexture::type::BakeBread_bg: return "Menu.jpg";
+		case eTexture::type::WashYoHands_bg: return "Wash Hands Instructions.png";
+		case eTexture::type::PutOnMask_bg: return "Mask Instructions.png";
 
 		case eTexture::type::Garbage: return "Garbage_Bin.png";
 		case eTexture::type::Compost: return "Compost_Pit.png";
@@ -64,6 +68,11 @@ namespace GameEngine
 		case eTexture::type::Instructions_wfh: return "WFH Instructions.png";
 		case eTexture::type::Window: return "Blank Window.png";
 		case eTexture::type::Numbers: return "Numbers.png";
+		case eTexture::type::Face: return "Face.png";
+		case eTexture::type::Mask: return "mask.png";
+		case eTexture::type::Hands: return "Hands.png";
+		case eTexture::type::Water: return "Possible Raindrops.png";
+
 		}
 		return "UnknownTexType";
 	}

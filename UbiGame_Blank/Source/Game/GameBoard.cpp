@@ -2,7 +2,7 @@
 #include "Game/Components/PlayerMovementComponent.h"
 #include "GameEngine/GameEngineMain.h"
 #include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
-#include <Game/Components/ImageClickComponent.h>
+#include "GameEngine/EntitySystem/Components/AnimationComponent.h"
 
 using namespace Game;
 
@@ -70,7 +70,7 @@ void GameBoard::SortGarbage()
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(sortGarbage);
 }
 
-void GameBoard::CreateImage(GameEngine::eTexture::type texture, float x, float y, float size_x, float size_y)
+GameEngine::Entity* GameBoard::CreateImage(GameEngine::eTexture::type texture, float x, float y, float size_x, float size_y)
 {
 	image = new GameEngine::Entity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(image);
@@ -86,15 +86,23 @@ void GameBoard::CreateImage(GameEngine::eTexture::type texture, float x, float y
 
 	//Click status
 	//image->AddComponent<Game::ImageClickComponent>();
+	return image;
 }
+
+
 
 void GameBoard::Wfh()
 {
 	wfh = new GameEngine::Entity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(wfh);
 	CreateBackground(GameEngine::eTexture::WFH_bg);
-	CreateImage(GameEngine::eTexture::Monitor, 940, 540, 1920, 1080);
-	CreateImage(GameEngine::eTexture::Window, 50, 50, 700, 700);
+	GameEngine::Entity* instructions_wfh = CreateImage(GameEngine::eTexture::Instructions_wfh, 940.0f, 540.0f, 1920.0f, 1080.0f);
+	GameEngine::Entity* counter = CreateImage(GameEngine::eTexture::Numbers,1090.0f,120.0f,1500.0f,200.0f);
+
+	delete instructions_wfh;
+	CreateImage(GameEngine::eTexture::Window, 150.0f, 125.0f, 300.0f, 250.0f);
+	//int randX = rand() % +150
+	//int randY = rand() % +125
 }
 
 void GameBoard::BakingBread()

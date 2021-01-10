@@ -32,7 +32,7 @@ namespace Game
 		void SortGarbage();
 		GameEngine::Entity* sortGarbage;
 
-		void CreateImage(GameEngine::eTexture::type texture, float x, float y,float size_x, float size_y);
+		GameEngine::Entity* CreateImage(GameEngine::eTexture::type texture, float x, float y,float size_x, float size_y);
 		GameEngine::Entity* image;
 
 		void Wfh();

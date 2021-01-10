@@ -20,6 +20,8 @@ namespace Game
 		bool IsGameOver() { return false; }
 
 	private:
+		int lives;
+
 		void CreatePlayer();          // <-- Added Function
 		GameEngine::Entity* m_player; // <-- Added Member
 
